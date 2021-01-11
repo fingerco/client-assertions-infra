@@ -1,0 +1,14 @@
+[
+  {
+    "name": "api",
+    "image": "210574254273.dkr.ecr.us-west-2.amazonaws.com/client-assertions-api:0.0.1",
+    "cpu": 256,
+    "memory": 512,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 3000
+      }
+    ]
+  }
+]
