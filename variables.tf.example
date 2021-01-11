@@ -1,0 +1,3 @@
+variable "api-lb-certificate-arn" {
+  default = "YOUR_SSL_CERTIFICATE_ARN"
+}
