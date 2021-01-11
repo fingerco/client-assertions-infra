@@ -1,7 +1,7 @@
 [
   {
     "name": "api",
-    "image": "210574254273.dkr.ecr.us-west-2.amazonaws.com/client-assertions-api:0.0.1",
+    "image": "210574254273.dkr.ecr.us-west-2.amazonaws.com/client-assertions-api:0.0.3",
     "cpu": 256,
     "memory": 512,
     "essential": true,
@@ -9,6 +9,17 @@
       {
         "containerPort": 3000
       }
-    ]
+    ],
+    "environment": [
+      {"name": "RAILS_ENV", "value": "production"}
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "client-assertions-api-svc",
+        "awslogs-region": "us-west-2",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
   }
 ]
