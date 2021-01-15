@@ -21,23 +21,23 @@ resource "aws_dynamodb_table" "assertion-failures" {
 }
 
 resource "aws_dynamodb_table" "prediction-failures" {
-  name           = "prediction-failures"
+  name           = "assertion-prediction-states"
   billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "id"
-  range_key      = "failed_at"
+  hash_key       = "user_id"
+  range_key      = "prediction_id"
 
   attribute {
-    name = "id"
+    name = "user_id"
     type = "S"
   }
 
   attribute {
-    name = "failed_at"
+    name = "prediction_id"
     type = "S"
   }
 
   ttl {
-    attribute_name = "TimeToExist"
+    attribute_name = "time_to_exist"
     enabled        = true
   }
 }
